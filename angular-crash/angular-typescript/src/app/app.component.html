@@ -1,0 +1,30 @@
+<div style="text-align: center">
+  <img
+    src="../assets/logo.png"
+    alt="LCO logo"
+    width="400"
+    height="300"
+    class="logo"
+  />
+</div>
+<div class="container">
+  Add a cat name proposal to the list:
+  <br />
+  <input
+    type="text"
+    class="input-text"
+    placeholder="Type name"
+    (keyup.enter)="addItem()"
+    [(ngModel)]="todoValue"
+  />
+  <button class="add-btn" (click)="addItem()">Add name</button>
+  <div class="list">
+    <ul>
+      <li *ngFor="let item of list">
+        <input type="checkbox" name="isDone" [(ngModel)]="item.isDone" />
+        {{ item.value }}
+        <button class="delete-btn" (click)="deleteItem(item.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>
