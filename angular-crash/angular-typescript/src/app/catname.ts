@@ -1,4 +1,4 @@
-export interface Todo {
+export interface CatName {
   id: number;
   value: string;
   isDone: boolean;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Todo } from './todo';
+import { CatName } from './catname';
 
 @Component({
   selector: 'app-root',
@@ -7,22 +7,22 @@ import { Todo } from './todo';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  todoValue!: string;
-  list!: Todo[];
+  catNameValue!: string;
+  list!: CatName[];
   ngOnInit() {
     this.list = [];
-    this.todoValue = '';
+    this.catNameValue = '';
   }
   addItem() {
-    if (this.todoValue !== '') {
-      const newItem: Todo = {
+    if (this.catNameValue !== '') {
+      const newItem: CatName = {
         id: Date.now(),
-        value: this.todoValue,
+        value: this.catNameValue,
         isDone: false,
       };
       this.list.push(newItem);
     }
-    this.todoValue = '';
+    this.catNameValue = '';
   }
 
   deleteItem(id: number) {
